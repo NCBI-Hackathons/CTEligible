@@ -11,4 +11,4 @@ One can make clinical trial searching and matching more successful by helping ma
 The goal of this project is to use machine learning techniques to find patterns of similar eligibility protocol criteria for clinical trials and guide the development of data-based clinical trial protocols for patient-to-trial matching.
 
  # CTEligible Workflow
- <IMG src='cteligible_workflow1.jpg' width="400" height="400" />
+ <IMG src='cteligible_workflow1.jpg'/>
