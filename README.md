@@ -12,3 +12,6 @@ The goal of this project is to use machine learning techniques to find patterns 
 
  # CTEligible Workflow
  <IMG src='cteligible_workflow2.jpg'/>
+ 
+  # CTEligible Modular Workflow
+ <IMG src='cteligible_workflow3.jpg'/>
