@@ -26,4 +26,4 @@ The goal of this project is to use machine learning techniques to find patterns 
  <IMG src='cteligible_workflow3.jpg'/>
 
 # Clustering Results
-<IMG src='firstpass_NLPparsed_clustering.png' />
+<IMG src='parsed_data/firstpass_NLPparsed_clustering.png' />
