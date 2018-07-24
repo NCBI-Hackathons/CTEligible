@@ -1,5 +1,5 @@
 # CTEligible
-Using machine learning to find patterns of similar eligibility protocol criteria for clinical trials.
+A Tool for Automating Similar Eligibility Protocol Criteria for Clinical Trials Using Machine Learning.
 
 <IMG src='cteligible_logo1.jpg' width="400" height="400" />
  
