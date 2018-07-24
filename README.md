@@ -24,3 +24,6 @@ The goal of this project is to use machine learning techniques to find patterns 
  
   # CTEligible Modular Workflow
  <IMG src='cteligible_workflow3.jpg'/>
+
+# Clustering Results
+<IMG src='firstpass_NLPparsed_clustering.png' />
