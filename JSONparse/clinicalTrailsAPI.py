@@ -1,52 +1,79 @@
-import urllib.request
 import json
 import sys
+import urllib.request
+import urllib
+import urllib.error
+
 
 
 def getJSON(nct_id):
-    with urllib.request.urlopen("https://clinicaltrialsapi.cancer.gov/v1/clinical-trial/" + nct_id) as url:
-        try:
-            jsonFile = json.loads(url.read().decode())
-        except urllib.error.HTTPError as e:
-            return None
+    try:
+        with urllib.request.urlopen("https://clinicaltrialsapi.cancer.gov/v1/clinical-trial/" + nct_id) as url:
+            try:
+                return json.loads(url.read().decode())
+            except urllib.error.HTTPError as e:
+                return None
+    except urllib.error.HTTPError as e:
         return None
 
 
-def getUnstructured(jsonFile):
+def getEligabliltyUnstructured(jsonFile):
     unstructed=[]
     for criteria in jsonFile['eligibility']['unstructured']:
-        #print (jsonFile['eligibility'])
-        unstructed.append(str(criteria["inclusion_indicator"])+":"+criteria["description"].strip())
+        unstructed.append(str(criteria["inclusion_indicator"])+":"+criteria["description"].replace("\n","").replace("\r","").strip())
     return("\t".join(unstructed))
 
-def getStructured(jsonFile):
-    headers=getStructuredHeader()
+def getEligabliltyStructured(jsonFile):
+    headers=getEligabliltyStructuredHeader()
     structured=[]
     for h in headers:
-        structured.append(str(jsonFile['eligibility']['structured'][h]))
+        if 'eligibility' in jsonFile:
+            if 'structured' in jsonFile['eligibility']:
+                for k in jsonFile['eligibility']['structured'].keys():
+                    if k not in headers:
+                        print (k)
+                if h in jsonFile['eligibility']['structured']:
+                    structured.append(str(jsonFile['eligibility']['structured'][h]))
+                else:
+                    structured.append("None")
+            else:
+                structured.append("None")
+        else:
+            structured.append("None")
     return structured
 
-def getStructuredHeader():
+def getEligabliltyStructuredHeader():
     return ["gender","max_age", "max_age_in_years", "max_age_number", "max_age_unit", "min_age","min_age_in_years","min_age_number","min_age_unit"]
 
+def printStructedEligablility(in_file):
+    print ("nct_id\t"+"\t".join(getEligabliltyStructuredHeader()))
+    for line in in_file:
+        if line.strip()=="":
+            break
+        nct_id=line.split("\t")[0].strip()
+        jsonToParse=getJSON(nct_id)
+        if jsonToParse is None:
+            print (nct_id+"\t404ERROR")
+        else:
+            print (nct_id+"\t"+"\t".join(getEligabliltyStructured(getJSON(nct_id))))
+    return
+
 def main():
-    printStructured=True
-    with open('../other_data/trials_criteria_phrases.txt', encoding="utf8", errors='ignore') as in_file:
-        if printStructured:
-            print ("nct_id\t"+"\t".join(getStructuredHeader()))
+    printUnstructed=True
+    with open(sys.argv[1], encoding="utf8", errors='ignore') as in_file:
+        if printUnstructed:
             for line in in_file:
                 if line.strip()=="":
                     break
-                #print (line)
-                nct_id=line.split(",")[0].strip()
-                if nct_id == "NCT01841723":
+                nct_id=line.split("\t")[0].strip()
+                if nct_id=="nci_id":
                     continue
-                #getJSON(nct_id)
-                #print (json.dumps(getJSON(nct_id), indent=4, sort_keys=True))
                 jsonToParse=getJSON(nct_id)
                 if jsonToParse is None:
-                    continue
-                print (nct_id+"\t"+"\t".join(getStructured(getJSON(nct_id))))
+                    print (nct_id+"\t404ERROR")
+                else:
+                    print (nct_id+"\t"+getEligabliltyUnstructured(jsonToParse))
+
 
 
 
