@@ -3,7 +3,7 @@
 
 <IMG src='cteligible_logo1.jpg' width="400" height="400" />
 
-CTEligible is a tool for clinicians to automatically generate or write clinical trial protocols. The tool therefore solves the challenges and problematic or error prone nature of the manuul process of writing clinical trial protocols.
+CTEligible is a tool for clinicians to automatically generate or write clinical trial protocols. The tool therefore solves the challenges and problematic or error prone nature of the manual process of writing clinical trial protocols.
 
 # What's the project background?
 Less than 5% of patients eligible for clinical trials register, resulting in higher drug development costs, drugs based on limited/overrepresented populations, and longer wait times. Making clinical trial search more effective can potentially decrease barriers to enrollment.
