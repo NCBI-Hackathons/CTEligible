@@ -1,0 +1,98 @@
+0	description	2.0
+1	Hemoglobin >= 8 g/dl (may be transfused)	65.0
+2	Hemoglobin >= 9.0 g/dL	131.75
+3	Hemoglobin >= 8.0 g/dL (note: the use of transfusion or other intervention to achieve hemoglobin [Hgb] >= 8.0 g/dl is acceptable)	53.61904761904762
+4	Hemoglobin (Hgb) > 9.0 g/dL obtained =< 21 days prior to registration	37.5
+5	Hemoglobin >= 10.0 g/dl (Note: the use of transfusion or other intervention to achieve hemoglobin [Hgb] >= 10.0 g/dl is acceptable)	48.523809523809526
+6	Hemoglobin >= 10.0 g/dL (Note: the use of transfusion or other intervention to achieve hemoglobin [Hgb] >= 10.0 g/dl is acceptable)	51.476190476190474
+7	Hemoglobin >= 8.0 g/dL	130.75
+8	Hemoglobin >= 9.0 g/dl	105.0
+9	Hemoglobin (Hgb) >= 8.0 g/dL (Note: the use of transfusion or other intervention to achieve Hgb >= 8.0 g/dL is acceptable)	56.523809523809526
+10	Hemoglobin (Hgb) > 9.0 g/dl	55.6
+11	Hemoglobin (HgB) > 8.5 g/dL	65.2
+12	Hemoglobin > 8.0 g/dL	90.75
+13	PROCUREMENT: Hemoglobin (Hgb) > 8.0 (transfusions allowed)	36.0
+14	Hemoglobin > 11 g/dL	80.5
+15	Hemoglobin >= 9.0 g/dL not requiring transfusions within the past 2 weeks	47.5
+16	Hemoglobin >= 9.0 mg/dl	94.25
+17	Hemoglobin >= 9 g/dL (transfusions and/or erythropoietin are permitted)	61.666666666666664
+18	Patients may enroll with lower hematologic values, if bone marrow involvement is documented; in this case, patients should be transfused to hemoglobin >= 8 g/dL	21.48
+19	Hemoglobin >= 8.0 g/dL (may receive red blood cell [RBC] transfusions)	56.27272727272727
+20	Hemoglobin >= 8.0 g/dL (note: the use of transfusion or other intervention to achieve hemoglobin [Hgb] >= 8.0 g/dL is acceptable)	57.57142857142857
+21	Hemoglobin >= 9 g/dL	173.75
+22	Uncontrolled diabetes: a glycated hemoglobin (Hg A1C) > 7% within 14 days prior to registration; the same criterion will be used in patients with confirmed diagnosis of diabetes mellitus who have been on a stable dietary or therapeutic regimen for this condition in the last three months	8.638297872340425
+23	Hemoglobin >= 8.0 (may transfuse)	81.4
+24	profound anemia (hemoglobin level of < 10 g/dL =< 28 days prior to registration)	20.0
+25	Hemoglobin >= 8.0 g/dl (Note: the use of transfusion or other intervention to achieve hemoglobin [Hgb] >= 8.0 g/dl is acceptable)	54.904761904761905
+26	Hemoglobin > 11.0 g/dL	80.25
+27	STEP I: Hemoglobin >= 8 g/dL	83.5
+28	Hemoglobin (Hgb) > 9.0 mg/dl	47.0
+29	Hemoglobin >= 8 g/dL (may be supported)	76.85714285714286
+30	Hemoglobin < 11 g/dL	76.25
+31	Hemoglobin >= 12 g/dL	119.25
+32	Hemoglobin >= 10 g/dL without transfusion within 4 days prior to enrollment	51.666666666666664
+33	Hemoglobin >= 90 g/L	88.75
+34	Hemoglobin >= 10 g/dL	130.75
+35	Hemoglobin >= 9 g/dl	114.0
+36	Hemoglobin > 9 g/dL	99.75
+37	Hemoglobin (Hg) >= 8g/dL (unsupported)	70.2
+38	Hemoglobin >= 9 g/dL, within 2 weeks of the first dose of study treatment	38.285714285714285
+39	Hemoglobin >= 9.0 g/dl (note: the use of transfusion or other intervention to achieve hemoglobin [Hgb] >= 9.0 g/dl is acceptable)	48.523809523809526
+40	Hemoglobin >= 10 g/dL (may be transfused but must be stable without clinical evidence of ongoing blood loss or hemolysis)	33.6
+41	Hemoglobin >= 9 g/dl (patients may be transfused to this level)	50.72727272727273
+42	Hemoglobin >= 9.0 g/dL within 90 days prior to randomization	59.4
+43	or patients with solid tumors without known bone marrow involvement: hemoglobin >= 8.0 g/dL (may receive red blood cell [RBC] transfusions)	28.761904761904763
+44	Hemoglobin >= 90 g/L * Blood transfusions are allowed at any time during the screening, treatment or follow-up period, according to the center recommendations	22.875
+45	Hemoglobin >= 9 g/dL obtained within 28 days prior to sub-study registration	53.25
+46	Hemoglobin >= 8 g/dl	103.5
+47	Patient must have relapsed or refractory myeloma that fits or did fit International Myeloma Working Group (IMWG) diagnostic criteria for symptomatic myeloma (although new or worsening end organ damage is not required to be eligible) as defined below: Evidence of any end organ damage criteria listed below (at any time) attributed to the patient's myeloma: ** Anemia > 2 g/dL below the lower limit of normal or a hemoglobin value < 10 g/dL	12.0
+48	Hemoglobin >= 10.0 g/dL	122.5
+49	Hemoglobin (HgB) >= 9.0 g/dL	102.6
+50	Hemoglobin >= 9.0 g/dl; (note: the use of transfusion or other intervention to achieve hemoglobin [Hgb] >= 9.0 g/dl is acceptable)	46.42857142857143
+51	Hemoglobin >= 10.0 g/dl (note: the use of transfusion or other intervention to achieve hemoglobin (Hgb) >= 10.0 g/dl is acceptable)	47.095238095238095
+52	Hemoglobin >= 8 g/dL for patients =< 16 years of age; >= 9 g/dL for patients > 16 years of age; Note: no transfusions are permitted 7 days prior to laboratory studies to determine eligibility	33.628571428571426
+53	Hemoglobin >= 8.0 g/dl (note: the use of transfusion or other intervention to achieve hemoglobin [Hgb] >= 8.0 g/dl is acceptable)	49.666666666666664
+54	Hemoglobin (Hgb) > 9.0 g/dL	72.2
+55	Hemoglobin >= 9 g/dL OR >= 5.6 mmol/L	90.5
+56	Hemoglobin (HgB) >= 9	103.5
+57	* Hemoglobin >= 8.0 g/dL at baseline (may receive red blood cell [RBC] transfusions)	45.5
+58	Hemoglobin >= 9.5 (within 60 days prior to registration)	47.44444444444444
+59	Hemoglobin >= 10.0 g/dl	101.75
+60	Hemoglobin must be >= 10 g/dL	88.0
+61	INCLUSION CRITERIA FOR DIPG (STRATUM A - CURRENTLY CLOSED TO ACCRUAL): Hemoglobin >= 8 g/dl (may receive transfusions)	27.88888888888889
+62	INCLUSION CRITERIA FOR HYPERMUTATED BRAIN TUMORS (STRATUM C): Hemoglobin >= 8 g/dl (may receive transfusions)	32.93333333333334
+63	INCLUSION CRITERIA FOR NB-NGG (STRATUM B): Hemoglobin >= 8 g/dl (may receive transfusions)	37.69230769230769
+64	Hemoglobin >= 10 g/dL (not requiring red blood cell [RBC] transfusions)	52.72727272727273
+65	Hemoglobin (Hgb) > 9	66.75
+66	Hemoglobin >= 8.0 g/dL at baseline (may receive red blood cell [RBC] transfusions)	48.61538461538461
+67	Hemoglobin > 10 g/dL	84.75
+68	Hemoglobin >= 90 g/L (or >= 9 g/dL)	75.125
+69	Hemoglobin >= 90 d/L (or >= 9g/dL)	76.42857142857143
+70	Hemoglobin >= 10 g/dL (allowing transfusion or other intervention to achieve this minimum hemoglobin)	48.357142857142854
+71	Hemoglobin >= 9 g/dL without transfusion within 7 days prior to enrollment	55.5
+72	Hemoglobin (Hgb) >= 9.0 g/dL	104.4
+73	Hemoglobin >= 9 g/dL within 21 days prior to registration	63.0
+74	Hemoglobin >= 9.0 g/dL (patients may be transfused to meet this criterion)	49.666666666666664
+75	Hemoglobin >= 8 g/dL	130.25
+76	RECURRENT/ PROGRESSIVE DIPG (STRATUM 1): Hemoglobin >= 8 g/dl (may receive transfusions)	40.333333333333336
+77	NON-PROGRESSED DIPG (STRATUM 2): Hemoglobin >= 8 g/dl (may receive transfusions)	43.81818181818182
+78	CLINICAL/LABORATORY CRITERIA: Hemoglobin >= 9 grams/dl; these results must be obtained within 28 days prior to registration	32.05882352941177
+79	Hemoglobin >= 10.0 g/dL (may receive red blood cell [RBC] transfusions)	54.0
+80	Hemoglobin greater than 9.0 mg/dl (transfusions are permitted to achieve baseline hemoglobin level)	24.53846153846154
+81	Hemoglobin (Hgb) >= 8 g/dL	102.2
+82	or patients with solid tumors without known bone marrow involvement: * Hemoglobin >= 8.0 g/dl at baseline (may receive packed red blood cell [PRBC] transfusions)	26.16
+83	Hemoglobin: >= 8.0 g/dL (note: the use of transfusion or other intervention to achieve hemoglobin [Hgb] >= 8.0 g/dl is acceptable)	45.714285714285715
+84	Hemoglobin >= 8.0 g/dl, with or without transfusion	58.5
+85	Hemoglobin >= 8 g/dl (may receive transfusions)	66.85714285714286
+86	Hemoglobin >= 10.0 g/dl (Note: The use of transfusion or other intervention to achieve hemoglobin [Hgb] >= 10.0 g/dl is NOT allowed)	43.36363636363637
+87	Hemoglobin (Hgb) >= 8 g/dl	85.6
+88	Hemoglobin >= 8.0 g/dL for patients with solid tumors and known bone marrow metastatic disease	39.733333333333334
+89	Hemoglobin >= 8.0 g/dL (may receive red blood cell [RBC] transfusions) for patients with solid tumors without bone marrow involvement	34.85
+90	Hemoglobin (Hgb) >= 9 g/dl	94.0
+91	Hemoglobin >= 10 g/dL with no blood transfusion in the past 28 days	47.38461538461539
+92	Patients with known bone marrow metastatic disease will be eligible for the study if they meet the following criteria: * Hemoglobin >= 8.0 g/dL at baseline (may receive red blood cell [RBC] transfusions, provided they are not known to be refractory to RBC transfusions); these patients will not be evaluable for hematologic toxicity; at least 5 of every cohort of 6 patients must be evaluable for hematologic toxicity for the dose-escalation part of the study; if dose-limiting hematologic toxicity is observed, all subsequent patients enrolled must be evaluable for hematologic toxicity	15.076923076923077
+93	Hemoglobin >= 10.0 g/dL and no blood transfusions in the 28 days prior to entry/randomization	42.53333333333333
+94	Hemoglobin >= 9 g/dL without transfusion in the preceding 7 days	57.90909090909091
+95	Hemoglobin >= 9.0 g/dl; (Note: The use of transfusion or other intervention to achieve hemoglobin [Hgb] >= 9.0 g/dl is acceptable)	45.23809523809524
+96	Hemoglobin >= 9 g/dL, patients may receive transfusion to meet criterion	48.0
+97	Hemoglobin >= 9 g/dL or >= 5.6 mmol/L	94.375
