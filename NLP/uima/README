@@ -1,0 +1,6 @@
+To run the annotation viewer with maven type: mvn install exec:exec
+For the field "Location of Analysis Engine XML Descriptor:" you should use the file EmptyAEDescriptor.xml located in src/main/resources.
+For the field "Output Directory" you should use a directory such as /parsed_data/secondpass_NLPparsed with .xmi files compiled.
+To view those files hit the "View" button on the lower right.
+Nothing bad will happen if you hit the "Interactive" button but nothing interesting will happen either.
+Beware if you hit the "Run" button because this will overright the xmi files.
