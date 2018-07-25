@@ -1,3 +1,4 @@
+This is maven project so you will need maven installed. https://maven.apache.org/download.cgi
 To run the annotation viewer with maven type: mvn install exec:exec
 For the field "Location of Analysis Engine XML Descriptor:" you should use the file EmptyAEDescriptor.xml located in src/main/resources.
 For the field "Output Directory" you should use a directory such as /parsed_data/secondpass_NLPparsed with .xmi files compiled.
