@@ -30,3 +30,7 @@ The goal of this project is to use machine learning techniques to find patterns 
 
 # Clustering Results
 <IMG src='parsed_data/firstpass_NLPparsed_clustering.png' />
+<br />
+<IMG src='clusters_hemoglobin.jpg' />
+<br />
+<IMG src='annotation_clusters_nci.jpg' />
