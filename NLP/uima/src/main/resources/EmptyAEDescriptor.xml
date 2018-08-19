@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+	<frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+	<primitive>true</primitive>
+	<annotatorImplementationName>edu.buffalo.bmi.uima.EmptyAE</annotatorImplementationName>
+	<analysisEngineMetaData>
+		<name>EmptyAnalysisEngineDescriptor</name>
+		<description />
+		<version>1.0</version>
+		<vendor />
+        <configurationParameters>
+        </configurationParameters>
+		<typeSystemDescription>
+			<imports>
+				<import name="edu.buffalo.bmi.simple_terms_annotation_types.SimpleTermsTypeSystemDescriptor" />
+			</imports>
+		</typeSystemDescription>
+		<typePriorities>
+		</typePriorities>
+		<fsIndexCollection />
+    <capabilities>
+      <capability>
+        <outputs>
+                    <type allAnnotatorFeatures="true">edu.buffalo.bmi.Sentence</type>
+                    <type allAnnotatorFeatures="true">edu.buffalo.bmi.Token</type>
+                    <type allAnnotatorFeatures="true">edu.buffalo.bmi.OpenClassToken</type>                    
+                    <type allAnnotatorFeatures="true">edu.buffalo.bmi.Chunk</type>
+                    <type allAnnotatorFeatures="true">edu.buffalo.bmi.BioMedicalEntity</type>
+                    <type allAnnotatorFeatures="true">edu.buffalo.bmi.MeasurementInequality</type>
+                    <type allAnnotatorFeatures="true">edu.buffalo.bmi.Dependency</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+		<operationalProperties>
+			<modifiesCas>true</modifiesCas>
+			<multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+			<outputsNewCASes>false</outputsNewCASes>
+		</operationalProperties>
+	</analysisEngineMetaData>
+</analysisEngineDescription>
+

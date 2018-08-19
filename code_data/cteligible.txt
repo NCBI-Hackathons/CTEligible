@@ -1,0 +1,14 @@
+Inclusion Criteria
+Age 18-80
+Gender All
+Lung Cancer
+EGFR Negative
+Platelets >= 100,000/uL (untransfused)
+
+Exclusion criteria
+ESRD
+ESLD
+Platelet Count < 50000
+Hg < 7.0
+WBC < 1.0
+HIV+
