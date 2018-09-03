@@ -1,0 +1,32 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+
+  <form class="search-form" (ngSubmit)="onSubmit()">
+
+
+  <mat-form-field class="search-full-width">
+    
+    <textarea [(ngModel)]="text" matInput placeholder="Enter protocol" name="searchStr"></textarea>
+
+  </mat-form-field>
+  <button type="submit" style="margin-left: 10px;" mat-stroked-button color="primary">Check</button>
+
+  <p>Suggestion: </p>
+  <p [innerHTML]="suggestion"></p>
+
+
+</form>
+
+  
+</div>
+
+
+
+  
+
+
+
+
