@@ -3,6 +3,7 @@ from suggestions_utils import clean_text
 from suggestions_utils import convert_to_frequency
 from tfidf_converter import TfidfConverter
 import operator
+import math
 
 
 def get_text_from_mongo():
@@ -10,7 +11,18 @@ def get_text_from_mongo():
 
 
 def get_text_from_dir(path):
-    pass
+    return get_cluster_text(path)
+
+
+def dot_product(d1, d2):
+    dot = 0.0
+    for term in d1.keys():
+        val1 = d1[term]
+        val2 = d2.get(term, 0.0)
+
+        dot += val1 * val2
+
+    return dot
 
 
 class ClusterSuggestor:
@@ -33,19 +45,30 @@ class ClusterSuggestor:
 
         similarity = []  # (cluster, sim_score to input)
         for cluster, cluster_tfidf in self.cluster_tfidf.items():
-            similarity.append(cluster, self.cosine(cluster_tfidf, input_tfidf))
+            similarity.append(
+                (cluster, self.cosine(cluster_tfidf, input_tfidf)))
 
         sorted_clusters_by_sim = sorted(
-            similarity, key=operator.itemgetter(1), reversed=True)
+            similarity, key=operator.itemgetter(1), reverse=True)
 
         closest_cluster = sorted_clusters_by_sim[0][0]
 
         possible_suggestions = self.cluster_text[closest_cluster]
+        suggestions = possible_suggestions[:n]
 
-        return possible_suggestions[:n]
+        output = {
+            "text": input_text,
+            "suggestions": suggestions
+        }
 
-    def cosine(self, v1, v2):
-        pass
+        return output
+
+    def cosine(self, cluster_tfidf, input_tfidf):
+        dot = dot_product(cluster_tfidf, input_tfidf)
+        cluster_2_norm = math.sqrt(dot_product(cluster_tfidf, cluster_tfidf))
+        input_2_norm = math.sqrt(dot_product(input_tfidf, input_tfidf))
+
+        return dot / (cluster_2_norm * input_2_norm)
 
     def convert_to_tfidf(self, input_text):
         tokens = clean_text(input_text)

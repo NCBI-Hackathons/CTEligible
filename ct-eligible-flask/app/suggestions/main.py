@@ -1,30 +1,13 @@
-from suggestions_utils import get_cluster_text
-from suggestions_utils import clean_text
-from suggestions_utils import convert_to_frequency
-from tfidf_converter import TfidfConverter
+from suggest_cluster import ClusterSuggestor
+import pprint
 
 
 def main():
-    # Load text from local directory
-    cluster_dir = '/home/jaojao/hackathon/clusters/'
-    raw_cluster_text = get_cluster_text(cluster_dir)
+    input_text = 'The platelet count is greater than 10000'
+    suggestor = ClusterSuggestor(from_mongo=False)
+    suggestions = suggestor.suggest(input_text)
 
-    # Get frequency vectors for clusters
-    freq_vectors = {}
-    for name, phrases in raw_cluster_text.items():
-        raw_text = ' '.join(phrases)
-        tokens = clean_text(raw_text)
-        freq_vector = convert_to_frequency(tokens)
-        freq_vectors[name] = freq_vector
-
-    # Get TF-IDF vectors for each cluster
-    tfidf = TfidfConverter(freq_vectors)
-    tfidf.generate_tfidf_vectors()
-    vectors = tfidf.tfidf_vectors
-
-    for cluster, vector in vectors.items():
-        print(cluster + '\n')
-        print(str(vector) + '\n')
+    pprint.pprint(suggestions)
 
 
 if __name__ == '__main__':
