@@ -51,7 +51,7 @@ def cli():
 
 @cli.command()
 def run_server():
-    app.run()
+    app.run(host='0.0.0.0', port=4000)
 
 
 @cli.command()
