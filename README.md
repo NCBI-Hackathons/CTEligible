@@ -34,3 +34,16 @@ The goal of this project is to use machine learning techniques to find patterns 
 <IMG src='clusters_hemoglobin.jpg' />
 <br />
 <IMG src='annotation_clusters_nci.jpg' />
+
+# User Interface (UI) Challenges
+
+A proposed framework at the 12th NIH Research Festival Collaborative Data Science and Machine Learning Hackathon on September 10 - 12, 2018
+
+by
+Kelechi Mezu (ninabina921), Christopher Lavender (lavenderca), Julio Marco Pineda (juliomarcopineda), Max Serpe (maxSerpe), and Jia-Ling Lin (linjialing)
+
+led by Justin Koufopoulos (jkoufopoulos) and Gil Alterovitz (gilusa)
+
+<IMG src='UI Challenge_framework_2018.JPG' />
+
+
