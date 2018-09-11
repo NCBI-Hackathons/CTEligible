@@ -2,7 +2,6 @@ import os
 import csv
 from collections import Counter
 import re
-from tfidf_converter import TfidfConverter
 
 
 def get_cluster_text(cluster_dir):
@@ -41,27 +40,3 @@ def convert_to_frequency(tokens):
         freq_vector[word] = freq
 
     return freq_vector
-
-
-def main():
-    cluster_dir = '/home/jaojao/hackathon/clusters/'
-    raw_cluster_text = get_cluster_text(cluster_dir)
-
-    freq_vectors = {}
-    for name, phrases in raw_cluster_text.items():
-        raw_text = ' '.join(phrases)
-        tokens = clean_text(raw_text)
-        freq_vector = convert_to_frequency(tokens)
-        freq_vectors[name] = freq_vector
-
-    tfidf = TfidfConverter(freq_vectors)
-    tfidf.generate_tfidf_vectors()
-    vectors = tfidf.tfidf_vectors
-
-    for cluster, vector in vectors.items():
-        print(cluster + '\n')
-        print(str(vector) + '\n')
-
-
-if __name__ == '__main__':
-    main()
