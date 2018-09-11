@@ -4,3 +4,6 @@ nih-ct-protocol-ui/node_modules/*
 *.pyc
 
 ct-eligible-flask/notebooks/.ipynb_checkpoints/*
+
+# Python related files
+*.pyc
