@@ -1,7 +1,8 @@
 import os
 import csv
 from collections import Counter
-from suggestions import TfIdfConverter
+import re
+# from suggestions.tfidf_converter import TfIdfConverter
 
 
 def get_cluster_text(cluster_dir):
@@ -24,7 +25,10 @@ def get_cluster_text(cluster_dir):
 
 
 def clean_text(raw_text):
-    tokens = raw_text.lower().split()
+    removelist = '<=> '
+    cleaned_text = re.sub(r'[^\w' + removelist + ']', '', raw_text)
+
+    tokens = cleaned_text.lower().split()
     return tokens
 
 
@@ -50,7 +54,11 @@ def main():
         freq_vector = convert_to_frequency(tokens)
         freq_vectors[name] = freq_vector
 
-    tfidf = TfIdfConverter(freq_vectors)
+    for name, vectors in freq_vectors.items():
+        print(name + "\n")
+        print(str(vectors) + "\n")
+
+    #  tfidf = TfIdfConverter(freq_vectors)
 
 
 if __name__ == '__main__':
