@@ -47,23 +47,26 @@ class ClusterSuggestor:
 
         input_tfidf = self.convert_to_tfidf(input_text)
 
-        similarity = []  # (cluster, sim_score to input)
-        for cluster, cluster_tfidf in self.cluster_tfidf.items():
-            similarity.append(
-                (cluster, self.cosine(cluster_tfidf, input_tfidf)))
-
-        sorted_clusters_by_sim = sorted(
-            similarity, key=operator.itemgetter(1), reverse=True)
-
-        closest_cluster = sorted_clusters_by_sim[0][0]
-
-        possible_suggestions = self.cluster_text[closest_cluster]
-        suggestions = possible_suggestions[:n]
-
         output = {
             "text": input_text,
-            "suggestions": suggestions
+            "suggestions": []
         }
+        if input_tfidf:
+            similarity = []  # (cluster, sim_score to input)
+            for cluster, cluster_tfidf in self.cluster_tfidf.items():
+                similarity.append(
+                    (cluster, self.cosine(cluster_tfidf, input_tfidf)))
+
+            sorted_clusters_by_sim = sorted(
+                similarity, key=operator.itemgetter(1), reverse=True)
+
+            closest_cluster = sorted_clusters_by_sim[0][0]
+
+            possible_suggestions = self.cluster_text[closest_cluster]
+            suggestions = possible_suggestions[:n]
+
+            output["text"] = input_text
+            output["suggestions"] = suggestions
 
         return output
 
