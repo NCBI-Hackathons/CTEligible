@@ -48,7 +48,20 @@ class ClusterSuggestor:
         pass
 
     def convert_to_tfidf(self, input_text):
-        pass
+        tokens = clean_text(input_text)
+        freq_vector = convert_to_frequency(tokens)
+        total = float(sum(freq for freq in freq_vector.values()))
+
+        input_tfidf = {}
+        for term, count in freq_vector.items():
+            if term not in self.idf:
+                continue
+
+            term_tf = count / total
+            term_idf = self.idf[term]
+            input_tfidf[term] = term_tf * term_idf
+
+        return input_tfidf
 
     def get_cluster_tfidf_vectors(self):
         # Obtain frequency vectors
