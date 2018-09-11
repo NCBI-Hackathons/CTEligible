@@ -2,3 +2,5 @@ nih-ct-protocol-ui/package-lock.json
 nih-ct-protocol-ui/node_modules/*
 
 *.pyc
+
+ct-eligible-flask/notebooks/.ipynb_checkpoints/*
