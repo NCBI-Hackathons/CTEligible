@@ -1,13 +1,17 @@
-from suggestions_utils import get_cluster_text
-from suggestions_utils import clean_text
-from suggestions_utils import convert_to_frequency
-from tfidf_converter import TfidfConverter
+from app import mongo
+from app.suggestions.suggestions_utils import \
+    clean_text, get_cluster_text, convert_to_frequency
+from app.suggestions.tfidf_converter import TfidfConverter
 import operator
 import math
 
 
 def get_text_from_mongo():
-    pass
+    cluster_text = dict()
+    cursor = mongo.db.clusters.find({})
+    for clust in cursor:
+        cluster_text[clust['_id']] = clust['suggestions']
+    return cluster_text
 
 
 def get_text_from_dir(path):

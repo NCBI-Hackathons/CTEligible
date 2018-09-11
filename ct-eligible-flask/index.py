@@ -4,6 +4,7 @@ import click
 from flask import jsonify, make_response, render_template
 
 from app import app, mongo
+from app.suggestions.suggest_cluster import ClusterSuggestor
 
 
 def add_cluster_json_file_to_mongo(json_file):
@@ -25,13 +26,31 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/get-suggestion/')
+@app.route('/get-suggestion/<input_json>')
+def get_suggestions(input_json=None, methods=['POST']):
+
+    if not input_json:
+        return 'No input text.'
+
+    try:
+        input_data = json.loads(input_json)
+    except ValueError:
+        input_data = json.loads(json.dumps(input_json))
+
+    cluster_suggestor = ClusterSuggestor()
+    suggestion = cluster_suggestor.suggest(input_data)
+
+    return jsonify(suggestion)
+
+
 @click.group()
 def cli():
     pass
 
 
 @cli.command()
-def runserver():
+def run_server():
     app.run()
 
 
