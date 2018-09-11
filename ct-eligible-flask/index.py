@@ -13,7 +13,8 @@ def add_cluster_json_file_to_mongo(json_file):
         clust_list = json.load(f)
 
     for clust in clust_list:
-        mongo.db.clusters.insert_one(clust)
+        mongo.db.clusters.replace_one(
+            {'_id': clust['_id']}, clust, upsert=True)
 
 
 @app.errorhandler(404)
