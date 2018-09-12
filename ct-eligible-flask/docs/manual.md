@@ -26,6 +26,13 @@ Second, add cluster information to the database:
 python index.py add_cluster_json ../data/clusters.json
 ```
 
+Third, add ctep information to the database:
+
+```
+python index.py add_ctep_json .../data/ctep.json
+```
+
+
 Last, run the server:
 
 ```
