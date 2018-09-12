@@ -23,7 +23,7 @@ def add_ctep_json_file_to_mongo(json_file):
         ctep_list = json.load(f)
 
     for ctep in ctep_list:
-        mongo.db.clusters.replace_one(
+        mongo.db.ctep.replace_one(
             {'_id': ctep['_id']}, ctep, upsert=True)
 
 
