@@ -14,7 +14,9 @@ ct-eligible-flask runs using Flask and MongoDB. To install dependencies, we prov
 pip install -r requirements
 ```
 
-First, initialize MongoDB:
+Make sure to download MongoDB and pip before moving on to the following steps.
+
+First, initialize MongoDB daemon:
 
 ```
 mongod
@@ -23,13 +25,13 @@ mongod
 Second, add cluster information to the database:
 
 ```
-python index.py add_cluster_json ../data/clusters.json
+python index.py add_cluster_json data/clusters.json
 ```
 
 Third, add ctep information to the database:
 
 ```
-python index.py add_ctep_json .../data/ctep.json
+python index.py add_ctep_json data/ctep.json
 ```
 
 
