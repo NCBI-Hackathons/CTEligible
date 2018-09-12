@@ -42,6 +42,17 @@ class ClusterSuggestor:
         self.cluster_tfidf = {}
 
     def suggest(self, input_text, n=1):
+        criteria = [criterion for criterion in input_text.split(
+            u'\u2022') if criterion]
+
+        suggestions = []
+        for criterion in criteria:
+            suggestion = self.suggest_for_one(criterion)
+            suggestions.append(suggestion)
+
+        return suggestions
+
+    def suggest_for_one(self, input_text, n=1):
         if not self.cluster_tfidf:
             self.get_cluster_tfidf_vectors()
 
@@ -49,7 +60,8 @@ class ClusterSuggestor:
 
         output = {
             "text": input_text,
-            "suggestions": []
+            "data_suggestion": [],
+            "ctep_suggestion": []
         }
         if input_tfidf:
             similarity = []  # (cluster, sim_score to input)
@@ -66,7 +78,7 @@ class ClusterSuggestor:
             suggestions = possible_suggestions[:n]
 
             output["text"] = input_text
-            output["suggestions"] = suggestions
+            output["data_suggestion"] = suggestions
 
         return output
 
