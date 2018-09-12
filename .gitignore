@@ -7,3 +7,5 @@ ct-eligible-flask/notebooks/.ipynb_checkpoints/*
 
 # Python related files
 *.pyc
+
+.DS_Store
