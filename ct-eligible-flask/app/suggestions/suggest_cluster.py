@@ -4,7 +4,6 @@ from app.suggestions.suggestions_utils import \
 from app.suggestions.tfidf_converter import TfidfConverter
 import operator
 import math
-import re
 from BeautifulSoup import BeautifulSoup
 
 
