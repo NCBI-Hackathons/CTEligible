@@ -16,7 +16,7 @@ export class Hit {
             public _index: string="",
             public _type: string="",
             public _score: number=0,
-            public highlight: Highlight=new Highlight(), 
+            public highlight: Highlight=new Highlight(),
         ){}
 }
 
@@ -26,5 +26,3 @@ export class Highlight {
             public value: string[]=[],
         ){}
 }
-
-

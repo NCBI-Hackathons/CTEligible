@@ -1,32 +1,21 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
+
+<div style="text-align:center" class="container content">
+  <div class="sidenav hometitle">
+  <a routerLink="/about">About</a>
+  <a routerLink="/search_criteria">Search Protocols</a>
+  </div>
+
+  <h1 class="hometitle">
+    {{ title }}
   </h1>
 
   <form class="search-form" (ngSubmit)="onSubmit()">
 
-
-  <mat-form-field class="search-full-width">
-    
-    <textarea [(ngModel)]="text" matInput placeholder="Enter protocol" name="searchStr"></textarea>
-
-  </mat-form-field>
-  <button type="submit" style="margin-left: 10px;" mat-stroked-button color="primary">Check</button>
-
-  <p>Suggestion: </p>
-  <p [innerHTML]="suggestion"></p>
+  <router-outlet></router-outlet>
 
 
 </form>
 
-  
+
 </div>
-
-
-
-  
-
-
-
-
