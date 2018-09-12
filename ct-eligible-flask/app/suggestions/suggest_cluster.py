@@ -4,6 +4,8 @@ from app.suggestions.suggestions_utils import \
 from app.suggestions.tfidf_converter import TfidfConverter
 import operator
 import math
+import re
+from BeautifulSoup import BeautifulSoup
 
 
 def get_text_from_mongo():
@@ -51,8 +53,21 @@ class ClusterSuggestor:
         self.cluster_tfidf = {}
 
     def suggest(self, input_text, n=1):
-        criteria = [criterion for criterion in input_text.split(
-            u'\u2022') if criterion]
+        soup = BeautifulSoup(input_text)
+        bullets = soup.findAll('li')
+        ptags = soup.findAll('p')
+
+        criteria = []
+        if bullets:
+            for bullet in bullets:
+                criteria.append(bullet.getText())
+
+        elif ptags:
+            for ptag in ptags:
+                criteria.append(ptag.getText())
+
+        else:
+            criteria.append(input_text)
 
         suggestions = []
         for criterion in criteria:
