@@ -67,5 +67,5 @@ http://localhost:4000/get-suggestion/platelet
 The API returns suggestions in JSON format.  The format is as follows:
 
 ```
-{"suggestions":[<SUGGESTIONS>, ], "text":<INPUT TEXT>}
+{"ctep_suggestion":[<SUGGESTIONS>, ], "data_suggestion":[<SUGGESTIONS>, ], "text":<INPUT TEXT>}
 ```
