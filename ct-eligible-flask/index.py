@@ -17,6 +17,16 @@ def add_cluster_json_file_to_mongo(json_file):
             {'_id': clust['_id']}, clust, upsert=True)
 
 
+def add_ctep_json_file_to_mongo(json_file):
+
+    with open(json_file) as f:
+        ctep_list = json.load(f)
+
+    for ctep in ctep_list:
+        mongo.db.ctep.replace_one(
+            {'_id': ctep['_id']}, ctep, upsert=True)
+
+
 @app.errorhandler(404)
 def not_found(error):
     return make_response(jsonify({'error': 'Not found'}), 404)
@@ -59,6 +69,12 @@ def run_server():
 @click.argument('json_file')
 def add_cluster_json(json_file):
     add_cluster_json_file_to_mongo(json_file)
+
+
+@cli.command()
+@click.argument('json_file')
+def add_ctep_json(json_file):
+    add_ctep_json_file_to_mongo(json_file)
 
 
 if __name__ == '__main__':

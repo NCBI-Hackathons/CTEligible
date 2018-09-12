@@ -14,6 +14,14 @@ def get_text_from_mongo():
     return cluster_text
 
 
+def get_ctep_from_mongo():
+    ctep = {}
+    cursor = mongo.db.ctep.find({})
+    for ctep in cursor:
+        ctep[ctep['_id']] = ctep['suggestions']
+    return ctep
+
+
 def get_text_from_dir(path):
     return get_cluster_text(path)
 
@@ -38,6 +46,7 @@ class ClusterSuggestor:
             self.cluster_text = get_text_from_dir(
                 '/home/jaojao/hackathon/clusters/')
 
+        self.ctep = get_ctep_from_mongo()
         self.idf = {}
         self.cluster_tfidf = {}
 
@@ -80,7 +89,26 @@ class ClusterSuggestor:
             output["text"] = input_text
             output["data_suggestion"] = suggestions
 
+            ctep = self.get_ctep_suggestions(input_tfidf)
+
+            if ctep:
+                output["ctep_suggestion"] = ctep
+
         return output
+
+    def get_ctep_suggestions(self, input_tfidf, n=1):
+        most_relevant_term = max(
+            input_tfidf.items(), key=operator.itemgetter(1))[0]
+
+        possible_ctep_suggestions = []
+        for ctep_id, suggestions in self.ctep.items():
+            for suggestion in suggestions:
+                cleaned = clean_text(suggestion)
+
+                if most_relevant_term in cleaned:
+                    possible_ctep_suggestions.append(suggestion)
+
+        return possible_ctep_suggestions[:n]
 
     def cosine(self, cluster_tfidf, input_tfidf):
         dot = dot_product(cluster_tfidf, input_tfidf)
