@@ -1,0 +1,18 @@
+
+
+<div class="dropdown">
+
+<ul class="criterias list-group hometitle">
+  <li *ngFor="let criteria of criterias" class="results_list list-group-item">
+    The <span class="highlight">platelet greater than or equal to 70000</span> platelets per cubic millimeter
+    <!-- <span>{{criteria.input}}</span> -->
+  </li>
+</ul>
+
+
+<div class="dropdown-content" *ngFor="let criteria of criterias">
+    <a class="data hometitle">{{criteria.results[0].data_suggestions}}</a>
+    <a class="ctep hometitle">{{criteria.results[0].ctep_suggestions}}</a>
+  </div>
+
+</div>

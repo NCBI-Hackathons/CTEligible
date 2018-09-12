@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
+import {SearchItemsComponent} from './search-items/search-items.component';
 import {PredictService} from './predict.service';
-import {Result} from './result';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,7 @@ import {Result} from './result';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'AI-Mediated Protocol Writer';
   result=null;
   text="";
   suggestion='';
@@ -19,6 +19,7 @@ export class AppComponent {
   constructor(private predictService: PredictService){}
 
   onSubmit(){
+
 
     this.suggestion="sfsfs";
     this.score=9;
@@ -42,7 +43,7 @@ export class AppComponent {
           this.suggestion=this.suggestion+" <mark>"+w+"</mark>";
         }
 
-        
+
       });
 
         this.suggestion = this.suggestion +" SCORE: " + ((h._score - 0) / (1 - 0)) + "</br>" + "</br>";
@@ -50,19 +51,21 @@ export class AppComponent {
 
       });
 
-      
-      
 
-      
+
+
+
     }
-    
+
 
 
 		});
 
+    //Fuzzy Search to higlight keywords in input
 
-  	
-  	
+
+
+
   }
 
 

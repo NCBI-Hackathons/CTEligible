@@ -1,0 +1,48 @@
+.criterias {
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    list-style: none;
+}
+.highlight {
+  background-color: pink;
+}
+.hometitle{
+  font-family: 'Source Sans Pro'
+}
+.results_list {
+  margin: 5px 0;
+}
+.ctep {
+  background-color: #0F951D;
+}
+.data {
+  background-color: #E1C617;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 260px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-left: 60px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
