@@ -14,7 +14,7 @@ ct-eligible-flask runs using Flask and MongoDB. To install dependencies, we prov
 pip install -r requirements
 ```
 
-Make sure to download MongoDB and pip before moving on to the following steps.
+Make sure to download MongoDB before moving on to the following steps.
 
 First, initialize MongoDB daemon:
 
