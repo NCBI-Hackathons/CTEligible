@@ -1,0 +1,313 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <title>:: CTEP Report Writing :: </title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	
+	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+		
+	<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
+
+
+	
+	<script>
+function add_field()
+{
+  var total_text=document.getElementsByClassName("input_text");
+  total_text=total_text.length+1;
+  document.getElementById("field_div").innerHTML=document.getElementById("field_div").innerHTML+
+  "<p id='input_text"+total_text+"_wrapper'><br><input type='text' class='input_text' id='input_text"+total_text+"' placeholder='Enter Criteria'> <input type='button' value='-' onclick=remove_field('input_text"+total_text+"');> <font size='1'> <b>* remove this criteria</b></font></p>";
+}
+function remove_field(id)
+{
+  document.getElementById(id+"_wrapper").innerHTML="";
+}
+	// // new function for displaying JSON on web page.
+	// function displayjson() {
+	// 	//$("#gettext").on("click", function () {
+	// 		alert("I am in a function");
+
+	// 		//this point needs to work
+	// 		var url = "get-suggestion/included";
+	// 		var newname = $.get(url, function (data) { alert("Success!")})
+			
+	// 			//.done(function (data) {
+	// 				//$.each(data, function (key, value) {
+	// 				alert("I have data" + data);
+	// 				$("#updateme").html(data);
+	// 				//}
+	// 				//);
+	// 			//});
+	// 	//});
+	// //});
+	// }
+	</script>
+
+	<style>
+	body
+	{
+  margin:0 auto;
+  padding:0;
+  text-align:center;
+  height:2000px;
+  background-color:white;
+	}
+	#wrapper
+	{
+  width:995px;
+  padding:0px;
+  margin:0px auto;
+  font-family:helvetica;
+  text-align:center;
+	}
+	input[type="text"]
+	{
+  width:200px;
+  height:35px;
+  margin-right:2px;
+  border-radius:3px;
+  border:1px solid green;
+  padding:5px;
+	}
+	input[type="button"]
+	{
+  background:none;
+  color:white;
+  border:none;
+  width:110px;
+  height:35px;
+  border-radius:3px;
+  background-color:green;
+  font-size:16px;
+	}
+</style>
+<!--	
+	<script language="javascript">
+			function changeIt()
+			{
+			var i = 1;
+			my_div.innerHTML = my_div.innerHTML +"<br><br><font size=2>New Enrolment Criteria:</font> <input id='newenrid"+i+"' type='text' name='newenrolmentcriteria"+i+"'>" + " <input type='button' value='-' onclick='removeRow(this)'> <font size=1>Remove Enrolment Criteria</font>";
+			i += 1;
+			}
+			
+			// need to remove first input
+			function removeRow(input) { 
+			input.parentNode.childNodes[2].remove();
+			}
+	</script>
+-->
+
+   
+</head>
+<body>
+
+<div class='container'>
+
+
+<form>
+<h3>
+<img src='static/cteplogo.jpg' height=140 width=140>
+Welcome to AIM (AI-Mediated) Clinical Trial Editor!
+</h3>
+<!-- Welcome to AI-Mediated CT Protocol Writing Tool! -->
+<br>
+<font size=4><b>AIMCTE: </b><i>A recommendation engine with an Interactive UI for quick writing of CT Protocols.</i></font>
+<br>
+<b>Features:</b>
+<br>
+* would require minimal system resources
+* identify eligibility criteria matching user inputs and recommend
+* quick generation of CT protocols
+<br>* a more intuitive UXp
+* intelligent protocol drafting
+* automated and accurate protocol writing
+<!--
+<span id="fooBar">&nbsp;</span>
+-->
+
+</form>
+<form method="POST" id="form1">
+<br><input class='btn'  type="button" value="Print Minimal" id="btnPrint" />
+
+    <div id="dvContainer">
+        <!-- This content needs to be printed. Dynamically add form elements textbox, and radio button. -->
+<H1>ELIGIBILITY:</H1>
+		<p>
+		<table border=0>
+
+		<tr>
+		<td width='10%'>TRIAL ID: </td>
+		<td width='30%'><input name="hello1" type="text" size="40" id="btnPrint" /></td>
+		<td width='30%'>&nbsp;</td>
+		<td width='30%'>&nbsp;</td>
+		</tr>
+
+		<tr>
+		<td width='20%'>Within </td><td width='20%' colspan='2'><input name="prior_reg" type="text" size="10" id="btnPrint" />
+<select class="form-group" name="prior_reg_period" id="btnPrint" />
+<option value='prior_reg_period_days'>days</option>
+<option value='prior_reg_period_weeks'>weeks</option>
+<option value='prior_reg_period_months'>months</option>
+<option value='prior_reg_period_years'>years</option>
+</select>
+&nbsp;prior to registration, you must not have treatment.
+</td>
+<td>&nbsp;</td>
+		</tr>
+		
+		<tr>
+		<td>&nbsp;</td><td width='20%' colspan='2'>
+<select class="form-group" name="compare_measure" id="btnPrint" />
+<option value='bpm'>BPM</option>
+<option value='blood_pressure'>Blood Pressure</option>
+<option value='blood_sugar'>Blood Sugar</option>
+<option value='platelet_count'>Platelet Count</option>
+</select>
+<select class="form-group" name="compare_sign" id="btnPrint" />
+<option value='grt_or_eq'>>=</option>
+<option value='grt_than'>></option>
+<option value='less_or_eq'><=</option>
+<option value='less_than'><</option>
+</select>
+<input name="compare_measure_value" type="text" size="10" id="btnPrint" />
+</td>
+<td>&nbsp;</td>
+		</tr>
+		<tr>
+		<td>
+		&nbsp;
+		</td>
+		<td colspan='2' align='left'>		
+		<div id="wrapper" align='left'>
+		<div id="field_div" align='left'>
+		<input  align='left' class='btn' type="button" value="+" onclick="add_field();"><font size='1'> <b>* add new criteria</b></font>
+		</div>
+		</div>	
+		</td>
+		<td width='30%'>&nbsp;</td>
+		</tr>
+
+		<tr>
+			<td width='10%'>Enter Free Text: </td>
+			<td width='30%'><input name="freesuggest" type="text" size="40" id="freesuggest" /></td>
+			<td width='30%'>&nbsp;</td>
+			<td width='30%'>&nbsp;</td>
+		</tr>
+
+		<tr>
+		<td>
+		&nbsp;
+		</td>
+		<td colspan=2 align='left'>		
+		<div id="wrapper" align='left'>
+		<div id="field_div" align='left'>
+<input id="gettext" align='left' class='btn' type="button" value="suggest" onclick="displayjson();"><font size='1'> <b>* show new suggestions</b></font>
+		<div id="updateme">		
+
+		</div>
+
+		</div>
+		</div>	
+		</td>
+		<td width='30%'>&nbsp;</td>
+		</tr>
+
+
+		<!--		
+		
+		<tr>
+		<td>Hello1: </td><td><input name="hello1" type="text" size="80" id="btnPrint" /></td>
+		</tr>
+
+		<input type="text" name=t1>
+		<input class='btn' type="button" value="+" onClick="changeIt()"><font size='1'> add new criteria</font>
+		<div id="my_div">&nbsp;</div>
+		
+		-->
+		</table>
+		</p>
+    </div>
+    
+    </form>
+</div>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	
+	<script>
+		// new function for displaying JSON on web page.		
+		function displayjson() {
+			//$("#gettext").on("click", function () {
+			// alert("I wanna display JSON!");
+			// jQuery.get(url, function (data) { alert("Success!");})
+			//this point now works
+			// $("#updateme").html(data);
+			// alert("Done. I now have data! " + JSON.stringify(data));
+			// alert("Done. I now have data! " + JSON.stringify(data));
+						//}
+						//);
+					//});
+				var squery = $("#freesuggest").val();
+				var url = "get-suggestion/" + squery;
+				jQuery.getJSON(url, {
+					q: squery
+			})
+					.done(function (data) {
+						// I need to copy and write this similar ffn for CTEP suggestion
+						//$.each(data[0], function (key, value) {
+						// alert("My Suggestion(s):" + JSON.stringify(data[0]['data_suggestion']));
+						 var sresult = JSON.stringify(data[0]['data_suggestion'][0]);
+						 var sresult = sresult.slice(1,-1);
+						 var newsresult = new Array();
+						 var newsresult = sresult.split(";");
+						//  $.each(newsresult)
+					
+						var items = [];
+						for(i=0; i < newsresult.length; i++)
+							{
+								items.push( "<li>" + newsresult[i] + "</li>" );
+							}	
+						$("<ul/>", {
+							"class": "list-group-item",
+							html: items.join("")
+						}).appendTo("#updateme");
+					});
+//						 $("#updateme").html(sresult);
+//			});
+		}
+		</script>
+
+<script type="text/javascript">
+	$("#btnPrint").on("click", function () {
+		var divContents = $("#dvContainer").html();
+		var printWindow = window.open('', '', 'height=400,width=800');
+		printWindow.document.write('<html><head><title>CTEP Report Writing</title>');
+		printWindow.document.write('</head><body >');
+		printWindow.document.write(divContents);
+		printWindow.document.write('</body></html>');
+		printWindow.document.close();
+		printWindow.print();
+	});
+</script>
+
+<script>
+
+	// $(document).ready(function () {
+	// 	$("#gettext").on("click", function () {
+	// 		var url = "http://localhost:4000/get-suggestion/included";
+	// 		$.getJSON(url, function (data) { })
+	// 			.done(function (data) {
+	// 				//$.each(data, function (key, value) {
+	// 					$("#updateme").text(data);
+	// 				//}
+	// 				//);
+	// 			});
+	// 	});
+	// });
+
+
+</script>	
+
+</body>
+</html>
